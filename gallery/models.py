@@ -10,7 +10,7 @@ class Image(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null = True)
 
     def __str__(self):
-        return self.name
+        return self.save()
 
     
     def delete_image(self):
@@ -34,13 +34,29 @@ class Image(models.Model):
 class Location(models.Model):
     name = models.CharField(max_length=200, null=True)
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
     def __str__(self):
         return self.name
+
+    @classmethod
+    def update_location(cls, id, value):
+        cls.objects.filter(id=id).update(name=value)
 
 
 class Category(models.Model):
     category = models.CharField(max_length=80, null= True)
 
+    
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
     def __str__(self):
         return self.category
-
