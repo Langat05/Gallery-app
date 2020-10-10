@@ -1,0 +1,28 @@
+{% extends 'all/main.html' %}
+
+{% block content %} 
+
+<br>
+
+<hr>
+
+<div class="container">
+    <h2>My Gallery</h2>
+    <div class="card">
+        <ol>
+       {% for i in images %}
+       <li>
+        {{ i.name }}
+        {{ i.location }}
+        {{ i.category }}
+       </li>
+        {% endfor %} 
+    
+      
+    </div>
+  </div>
+
+
+
+
+{% endblock content %}

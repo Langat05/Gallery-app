@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 
 # Create your views here.
 
@@ -9,5 +10,8 @@ def home(request):
 def about(request):
     return  render(request, 'all/about.html')  
 
-def pictures(request):
-    return  render(request, 'all/pictures.html') 
+def images(request):
+    images = Image.objects.all()
+    return  render(request, 'all/images.html',{'images':images}) 
+
+    
