@@ -12,6 +12,8 @@ def about(request):
 
 def images(request):
     images = Image.objects.all()
+    categories = Category.objects.all()
+    location = Location.objects.all()
     return  render(request, 'all/images.html',{'images':images}) 
 
     

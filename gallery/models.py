@@ -12,6 +12,24 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 
+    
+    def delete_image(self):
+        self.delete()
+
+    def update_image(self, Name=None, category=None):
+        self.name = Name if Name else self.Name
+        self.image_category = category if category else self.image_category 
+        self.save()
+
+
+    def __str__(self):
+        return self.name
+
+    @classmethod
+    def search_by_image_category(cls,search_term):
+        images = cls.objects.filter(image_category__category_name__icontains=search_term)
+        return images    
+
 
 class Location(models.Model):
     name = models.CharField(max_length=200, null=True)
