@@ -8,15 +8,16 @@
 
 <div class="container">
     <h2>My Gallery</h2>
-    <div class="card">
-        <ol>
-       {% for i in images %}
-       <li>
-        {{ i.name }}
-        {{ i.location }}
-        {{ i.category }}
-       </li>
-        {% endfor %} 
+    <div class="Column">
+        
+       {% for image in images %}
+
+       <div class="col-md-4 col-sm-4 col-xs-4">
+           <img src="{{image.image.url}}" class="img-responsive img-thumbnail"
+           data-toggle="modal" data-target = "#{{image.id}}">
+       </div>
+       
+
     
       
     </div>
