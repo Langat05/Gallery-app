@@ -6,13 +6,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <nav class="navbar navbar-blue bg-dark" >
-    <a class="navbar-brand" href="dashboard" style="color: white;">Home</a>
-    <a class="navbar-brand" href="about" style="color: white;">About</a>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-      <button class="btn btn-default" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </form>
+    <a class="navbar-brand" href="{% url 'home' %}" style="color: white;">Home</a>
+    <a class="navbar-brand" href="{% url 'about' %}" style="color: white;">About</a>
+    <div class="col-sm-4 col-md-4 navbar-right">
+
+      <form class="navbar-form" role="search" action="{% url 'search_category' %}">
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Category" name="image">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>Search</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
   </nav>

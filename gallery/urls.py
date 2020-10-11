@@ -4,13 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 
-
-
 urlpatterns = [
-    path('', home),
-    path('about/', about),
+    path('', home, name="home"),
+    path('about/', about, name="about"),
     path('images/',images),
-    path('search_category/', search_category),
+    path('search_category/', search_category, name="search_category"),
     path('media/path', serve,{'document_root': settings.MEDIA_ROOT}),
     path('static/path', serve,{'document_root': settings.STATIC_ROOT}),
 ]

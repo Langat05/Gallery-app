@@ -72,7 +72,7 @@ body{
             </p>
             <p class="card-text shot"><b>Location: </b>{{image.image_location}}</p>
             <p class="card-text cate"><b>Category: </b>{{image.image_category}}</p>
-
+            <p><b>Uploaded at: </b>{{ image.date_created }}</p>
             <div class="col-xs-10">
               <input class="form-control input-md responsive" type="text"
                 value="https://langat-gallery.com/{{image.url}}" id="myInput">
@@ -96,7 +96,7 @@ body{
     }
 </script>
 
-</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 {% endblock content %}
 
