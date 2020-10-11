@@ -30,5 +30,34 @@ class ImageTestClass(TestCase):
         self.image_food.save_image()
         self.image_food.delete_image()
         images = Image.objects.all()
-        self.assertTrue((len(images)==0))        
+        self.assertTrue((len(images)==0))   
+
+class LocationTestClass(TestCase):
+    def setUp(self):
+        self.location = Location(location_name='Rift-Valley')
+        self.location.save()
+
+    def tearDown(self):
+        Location.objects.all().delete()
+
+    def test_instance(self):
+        self.assertTrue(instance(self.location,Location))
+
+    def test_save_location(self):
+        Location.objects.all().delete()
+        self.location.save_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations) > 0)
+
+    def test_update_location(self):
+        new_location_name = 'Rift-Valley'
+        self.location.update_location(self.location.id, new_location_name)
+        updated_location = Location.objects.filter(location_name='Kenya')
+        self.assertTrue(len(updated_location) > 0)
+
+    def test_delete_location(self):
+        self.location.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
+
 
