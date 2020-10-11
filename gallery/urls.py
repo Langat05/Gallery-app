@@ -1,18 +1,15 @@
 from django.urls import path 
-from . import views
+from gallery.views import images,about,home,search_category
 from django.conf import settings
 from django.conf.urls.static import static
-from django.gallery.static import serve
+
 
 
 urlpatterns = [
-    path('', views.home),
-    path('about/', views.about),
-    path('images/', views.images),
-    path('search/', views.search),
-    path('media/', serve,{'document_root': settings.MEDIA_ROOT}),
-    path('static/', serve,{'document_root': settings.STATIC_ROOT}),
-    
+    path('', home),
+    path('about/', about),
+    path('images/', images),
+    path('search_category/', search_category),
 ]
 
 if settings.DEBUG:
