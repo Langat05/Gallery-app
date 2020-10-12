@@ -8,6 +8,11 @@ Langat K Justus
 
 This is an app that displays different kind of photos. The user can search for an image of his or her interest using the tags for search category. The user can also copy the link of an image and share with his or her friends.
 
+## Screenshot of the app
+
+![project](https://user-images.githubusercontent.com/57387935/95733013-31798600-0c8a-11eb-8551-9e4ad53abbff.png)
+
+
 ## Setup Installation
 
 1. Clone or download and unzip the repository from github
