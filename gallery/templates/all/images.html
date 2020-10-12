@@ -14,9 +14,9 @@ body{
 
 <div class="container">
 
-  <div class="row">
+  <div class="row" style="font-family: serif;">
     {% if images %}
-    <h1>Found {{ images|length }} images for this category</h2>
+    <h1> {{ images|length }} images found.</h2>
     {% else %}
     <h2>There are no Images for this category</h2>
     {% endif %}
@@ -24,7 +24,7 @@ body{
   </div>
 
 
-  <h2>My Gallery</h2>
+  <h2 style="text-align: center; font-family: monospace;">My Gallery</h2>
   <div class="Column">
     {% for image in images %}
 
