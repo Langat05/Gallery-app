@@ -1,8 +1,4 @@
 {% extends 'all/main.html' %} {% block content %}
-
-<br />
-
-<hr />
 <style>
 body{
   background-image: url("https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg");
@@ -11,12 +7,13 @@ body{
   z-index: -1;
 }
 </style>
+<br><br><br>
 
 <div class="container">
 
   <div class="row" style="font-family: serif;">
     {% if images %}
-    <h1> {{ images|length }} images found.</h2>
+    <h1> {{ images|length }} images found</h2>
     {% else %}
     <h2>There are no Images for this category</h2>
     {% endif %}
@@ -99,4 +96,5 @@ body{
 
 
 {% endblock content %}
+
 
