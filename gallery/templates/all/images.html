@@ -10,17 +10,6 @@ body{
 <br><br><br>
 
 <div class="container">
-
-  <div class="row" style="font-family: serif;">
-    {% if images %}
-    <h1> {{ images|length }} images found</h2>
-    {% else %}
-    <h2>There are no Images for this category</h2>
-    {% endif %}
-
-  </div>
-
-
   <h2 style="text-align: center; font-family: monospace;">My Gallery</h2>
   <div class="Column">
     {% for image in images %}
